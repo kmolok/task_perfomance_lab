@@ -139,12 +139,12 @@ int main(int argc, char *argv[])
     setlocale(LC_ALL, "rus");
     if (argc<2)
     {
-        cout << "Ôàéë íå ìîæåò áûòü îòêðûòv!\n";
+        cout << "Ð¤Ð°Ð¹Ð» Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚v!\n";
         return 1;
     }
     if (argc<4)
     {
-        cout << "Óêàæèòå ïåðèîä!\n";
+        cout << "Ð£ÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð¿ÐµÑ€Ð¸Ð¾Ð´!\n";
         return 2;
     }
     if (argc == 4)
@@ -155,30 +155,30 @@ int main(int argc, char *argv[])
     {
         fo = string(argv[2]);
     }
-    string sdtsa = string(argv[2]);//âðåìÿ íà÷àëà èíòåðåñóþùåãî ïåðèîäà
-    string sdtea = string(argv[3]);//âðåìÿ êîíöà èíòåðåñóþùåãî ïåðèîäà
+    string sdtsa = string(argv[2]);//Ð²Ñ€ÐµÐ¼Ñ Ð½Ð°Ñ‡Ð°Ð»Ð° Ð¸Ð½Ñ‚ÐµÑ€ÐµÑÑƒÑŽÑ‰ÐµÐ³Ð¾ Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð°
+    string sdtea = string(argv[3]);//Ð²Ñ€ÐµÐ¼Ñ ÐºÐ¾Ð½Ñ†Ð° Ð¸Ð½Ñ‚ÐµÑ€ÐµÑÑƒÑŽÑ‰ÐµÐ³Ð¾ Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð°
     string s = "";
     ifstream fout1(fo, ios_base::in);
     if(!getline(fout1,s))
     {
         fout1.close();
         ofstream fout1(fo, ios_base::out | ios_base::trunc);
-        fout1 << "Ïîïûòîê íàëèòü âîäó,Ïðîöåíò îøèáîê,Îáúåì âîäû áûë íàëèò,Îáúåì âîäû áûë íå íàëèò,Ïîïûòîê çàáðàòü âîäó,Ïðîöåíò îøèáîê,";
-        fout1 << "Îáúåì âîäû áûë çàáðàí,Îáúåì âîäû áûë íå çàáðàí,Îáúåì âîäû â íà÷àëå,Îáúåì âîäû â êîíöå" << endl;
+        fout1 << "ÐŸÐ¾Ð¿Ñ‹Ñ‚Ð¾Ðº Ð½Ð°Ð»Ð¸Ñ‚ÑŒ Ð²Ð¾Ð´Ñƒ,ÐŸÑ€Ð¾Ñ†ÐµÐ½Ñ‚ Ð¾ÑˆÐ¸Ð±Ð¾Ðº,ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð±Ñ‹Ð» Ð½Ð°Ð»Ð¸Ñ‚,ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð±Ñ‹Ð» Ð½Ðµ Ð½Ð°Ð»Ð¸Ñ‚,ÐŸÐ¾Ð¿Ñ‹Ñ‚Ð¾Ðº Ð·Ð°Ð±Ñ€Ð°Ñ‚ÑŒ Ð²Ð¾Ð´Ñƒ,ÐŸÑ€Ð¾Ñ†ÐµÐ½Ñ‚ Ð¾ÑˆÐ¸Ð±Ð¾Ðº,";
+        fout1 << "ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð±Ñ‹Ð» Ð·Ð°Ð±Ñ€Ð°Ð½,ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð±Ñ‹Ð» Ð½Ðµ Ð·Ð°Ð±Ñ€Ð°Ð½,ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð² Ð½Ð°Ñ‡Ð°Ð»Ðµ,ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð² ÐºÐ¾Ð½Ñ†Ðµ" << endl;
 
     }
     fout1.close();
     string fi = string(argv[1]);
     ifstream fin1(fi, ios_base::in);
     ofstream fout(fo, ios_base::app);
-    if (!fin1.is_open()) // åñëè ôàéë íå îòêðûò
+    if (!fin1.is_open()) // ÐµÑÐ»Ð¸ Ñ„Ð°Ð¹Ð» Ð½Ðµ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚
         {
-            cout << "Ôàéë íå ìîæåò áûòü îòêðûò!\n";
+            cout << "Ð¤Ð°Ð¹Ð» Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚!\n";
             return 3;
         }
-    if (!fout.is_open()) // åñëè ôàéë íå îòêðûò
+    if (!fout.is_open()) // ÐµÑÐ»Ð¸ Ñ„Ð°Ð¹Ð» Ð½Ðµ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚
         {
-            cout << "Ôàéë íå ìîæåò áûòü îòêðûò!\n";
+            cout << "Ð¤Ð°Ð¹Ð» Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚!\n";
             return 4;
         }
     string st = "", v = "", ncou = "";
@@ -187,14 +187,14 @@ int main(int argc, char *argv[])
     getline(fin1,s);
     getline(fin1,s);
     string sdts="";
-    sdts.insert(0,s,0,19);//âðåìÿ íà÷àëà ëîãà
+    sdts.insert(0,s,0,19);//Ð²Ñ€ÐµÐ¼Ñ Ð½Ð°Ñ‡Ð°Ð»Ð° Ð»Ð¾Ð³Ð°
     while(getline(fin1,s)){}
     string sdte="";
-    sdte.insert(0,s,0,19);//âðåìÿ êîíöà ëîãà
+    sdte.insert(0,s,0,19);//Ð²Ñ€ÐµÐ¼Ñ ÐºÐ¾Ð½Ñ†Ð° Ð»Ð¾Ð³Ð°
     bool start = minldt(parsingdt(sdte),parsingdt(sdtsa)),finish = minldt(parsingdt(sdtea),parsingdt(sdts));
     if(start||finish)
     {
-        cout << "Â çàäàííîì äèàïàçîíå çàïèñåé íåò!"<< endl;
+        cout << "Ð’ Ð·Ð°Ð´Ð°Ð½Ð½Ð¾Ð¼ Ð´Ð¸Ð°Ð¿Ð°Ð·Ð¾Ð½Ðµ Ð·Ð°Ð¿Ð¸ÑÐµÐ¹ Ð½ÐµÑ‚!"<< endl;
         return 0;
     }
     fin1.close();
@@ -259,27 +259,27 @@ int main(int argc, char *argv[])
         }
     }
     volumefin = now_count;
-    cout << "Ïîïûòîê íàëèòü âîäó: " << attemptstop << endl;
+    cout << "ÐŸÐ¾Ð¿Ñ‹Ñ‚Ð¾Ðº Ð½Ð°Ð»Ð¸Ñ‚ÑŒ Ð²Ð¾Ð´Ñƒ: " << attemptstop << endl;
     fout << attemptstop << ",";
     double persertop = (double(countertop)/double(attemptstop))*100;
-    cout << "Ïðîöåíò îøèáîê: " << persertop << "%" << endl;
+    cout << "ÐŸÑ€Ð¾Ñ†ÐµÐ½Ñ‚ Ð¾ÑˆÐ¸Ð±Ð¾Ðº: " << persertop << "%" << endl;
     fout << persertop << ",";
-    cout << "Îáúåì âîäû áûë íàëèò: " << voltop << endl;
+    cout << "ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð±Ñ‹Ð» Ð½Ð°Ð»Ð¸Ñ‚: " << voltop << endl;
     fout << voltop << ",";
-    cout << "Îáúåì âîäû áûë íå íàëèò: " << volntop << endl;
+    cout << "ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð±Ñ‹Ð» Ð½Ðµ Ð½Ð°Ð»Ð¸Ñ‚: " << volntop << endl;
     fout << volntop << ",";
-    cout << "Ïîïûòîê çàáðàòü âîäó: " << attemptsscp << endl;
+    cout << "ÐŸÐ¾Ð¿Ñ‹Ñ‚Ð¾Ðº Ð·Ð°Ð±Ñ€Ð°Ñ‚ÑŒ Ð²Ð¾Ð´Ñƒ: " << attemptsscp << endl;
     fout << attemptsscp << ",";
     double perserscp = (double(counterscp)/double(attemptsscp))*100;
-    cout << "Ïðîöåíò îøèáîê: " << perserscp << "%" << endl;
+    cout << "ÐŸÑ€Ð¾Ñ†ÐµÐ½Ñ‚ Ð¾ÑˆÐ¸Ð±Ð¾Ðº: " << perserscp << "%" << endl;
     fout << perserscp << ",";
-    cout << "Îáúåì âîäû áûë çàáðàí: " << volscp << endl;
+    cout << "ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð±Ñ‹Ð» Ð·Ð°Ð±Ñ€Ð°Ð½: " << volscp << endl;
     fout << volscp << ",";
-    cout << "Îáúåì âîäû áûë íå çàáðàí: " << volnscp << endl;
+    cout << "ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð±Ñ‹Ð» Ð½Ðµ Ð·Ð°Ð±Ñ€Ð°Ð½: " << volnscp << endl;
     fout << volnscp << ",";
-    cout << "Îáúåì âîäû â íà÷àëå: " << volumestart << endl;
+    cout << "ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð² Ð½Ð°Ñ‡Ð°Ð»Ðµ: " << volumestart << endl;
     fout << volumestart << ",";
-    cout << "Îáúåì âîäû â êîíöå: " << volumefin << endl;
+    cout << "ÐžÐ±ÑŠÐµÐ¼ Ð²Ð¾Ð´Ñ‹ Ð² ÐºÐ¾Ð½Ñ†Ðµ: " << volumefin << endl;
     fout << volumefin << endl;
     fout.close();
     return 0;

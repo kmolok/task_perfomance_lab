@@ -54,19 +54,19 @@ int main(int argc, char *argv[])
     setlocale(LC_ALL, "rus");
     if (argc<2)
     {
-        cout << "Файл не может быть открыт!\n";
+        cout << "Р¤Р°Р№Р» РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚РєСЂС‹С‚!\n";
         return 1;
     }
     string fn = string(argv[1]);
     ofstream fout(fn, ios_base::out | ios_base::trunc);
-    if (!fout.is_open()) // если файл не открыт
+    if (!fout.is_open()) // РµСЃР»Рё С„Р°Р№Р» РЅРµ РѕС‚РєСЂС‹С‚
         {
-            cout << "Файл не может быть открыт!\n";
+            cout << "Р¤Р°Р№Р» РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚РєСЂС‹С‚!\n";
             return 2;
         }
     int clk,un,act,cnt,volume = 200,now_count = 32,try_count =0 ;
     string s = "META DATA:";
-    fout << s << endl << volume << " (объем бочки)" << endl << now_count << " (текущий объем воды в бочке)" ;
+    fout << s << endl << volume << " (РѕР±СЉРµРј Р±РѕС‡РєРё)" << endl << now_count << " (С‚РµРєСѓС‰РёР№ РѕР±СЉРµРј РІРѕРґС‹ РІ Р±РѕС‡РєРµ)" ;
     time_t rawtime;
     time ( &rawtime );
 
@@ -102,11 +102,11 @@ int main(int argc, char *argv[])
             try_count += cnt;
             if(try_count>volume)
             {
-                st = st + "(феил)";
+                st = st + "(С„РµРёР»)";
             }
             else
             {
-                st = st + "(успех)";
+                st = st + "(СѓСЃРїРµС…)";
                 now_count = try_count;
             }
         }
@@ -115,11 +115,11 @@ int main(int argc, char *argv[])
             try_count -= cnt;
             if(try_count<0)
             {
-                st = st + "(феил)";
+                st = st + "(С„РµРёР»)";
             }
             else
             {
-                st = st + "(успех)";
+                st = st + "(СѓСЃРїРµС…)";
                 now_count = try_count;
             }
         }

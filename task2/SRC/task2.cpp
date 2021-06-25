@@ -115,14 +115,14 @@ int main(int argc, char *argv[])
     setlocale(LC_ALL, "rus");
     if (argc<2)
     {
-        cout << "Ôàéë íå ìîæåò áûòü îòêðûò!\n";
+        cout << "Ð¤Ð°Ð¹Ð» Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚!\n";
         return 1;
     }
     string fn = string(argv[1]);
     ifstream fin(fn);
-    if (!fin.is_open()) // åñëè ôàéë íå îòêðûò
+    if (!fin.is_open()) // ÐµÑÐ»Ð¸ Ñ„Ð°Ð¹Ð» Ð½Ðµ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚
         {
-            cout << "Ôàéë íå ìîæåò áûòü îòêðûò!\n";
+            cout << "Ð¤Ð°Ð¹Ð» Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚!\n";
             return 2;
         }
     retpoints rtp;
@@ -134,11 +134,11 @@ int main(int argc, char *argv[])
         rtp = find_collision(sp.r,sp.c,ln.d1,ln.d2);
         if (rtp.flag)
         {
-            cout << "Òî÷êè ñòîëêíîâåíèÿ: [" << rtp.p1.X << ", " << rtp.p1.Y << ", " << rtp.p1.Z << "] è [" << rtp.p2.X << ", " << rtp.p2.Y << ", " << rtp.p2.Z << "]" << endl;
+            cout << "Ð¢Ð¾Ñ‡ÐºÐ¸ ÑÑ‚Ð¾Ð»ÐºÐ½Ð¾Ð²ÐµÐ½Ð¸Ñ: [" << rtp.p1.X << ", " << rtp.p1.Y << ", " << rtp.p1.Z << "] Ð¸ [" << rtp.p2.X << ", " << rtp.p2.Y << ", " << rtp.p2.Z << "]" << endl;
         }
         else
         {
-            cout << "Êîëëèçèé íå íàéäåíî" << endl;
+            cout << "ÐšÐ¾Ð»Ð»Ð¸Ð·Ð¸Ð¹ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾" << endl;
         }
     }
     fin.close();
